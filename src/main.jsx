@@ -10,6 +10,11 @@ import {
 } from "react-router-dom";
 import Root from './Components/Root/Root.jsx';
 import Home from './Components/Home/Home.jsx';
+import AddBlog from './Components/AddBlog/AddBlog.jsx';
+import AllBlog from './Components/Allblog/AllBlog.jsx';
+import FeaturedBlog from './Components/FeaturedBLog/FeaturedBlog.jsx';
+import WishList from './Components/WishLilsh/WishList.jsx';
+import Register from './Components/Register/Register.jsx';
 
 
 const router = createBrowserRouter([
@@ -18,9 +23,25 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children:[
       {
-        path:'/',
-        element:<Home></Home>
-      }
+        path:'/addBlog',
+        element:<AddBlog></AddBlog>
+      },
+      {
+        path:'/allBlogs',
+        element:<AllBlog></AllBlog>
+      },
+      {
+        path:'/featuredBlogs',
+        element:<FeaturedBlog></FeaturedBlog>
+      },
+      {
+        path:'/wishlist',
+        element:<WishList></WishList>
+      },
+      {
+        path:'/register',
+        element:<Register></Register>
+      },
     ]
   },
 ]);
