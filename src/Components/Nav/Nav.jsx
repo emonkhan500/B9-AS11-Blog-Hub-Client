@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
+import { AuthContext } from "../provider/AuthProvider";
 
 const Nav = () => {
+
 
     const [theme, setTheme] = useState('light');
 
@@ -20,7 +24,19 @@ const Nav = () => {
             setTheme('light')
         }
     }
-    console.log(theme)
+    // console.log(theme)
+
+    const {user,logOut}=useContext(AuthContext)
+// console.log(user)
+
+const handleSignOut=()=>{
+  logOut()
+  .then()
+  .catch(error=>{
+    console.error(error)
+  })
+}
+
 
     const navLinks = <>
         <div className="sm:flex md:gap-3 items-center justify-center">
@@ -52,16 +68,19 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {/* <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                        <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                    </div>
-                </div> */}
-                <div className="ml-2">
-                    <Link to='/login'>
-                        <button className="btn">Login</button>
-                    </Link>
-                </div>
+            <div data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName || 'No User'} className="w-10 mr-2 rounded-full">
+          <img  className="rounded-2xl" alt="" src={user?.photoURL  } />
+        </div>
+        {
+          user?<>
+          
+<Link onClick={handleSignOut}> <button className="btn text-fuchsia-500">Sign Out</button></Link>
+</> :
+<div className="flex gap-3">
+<Link to='/login'> <button className="btn text-fuchsia-500">Login</button></Link>
+<Link to='/register'> <button className="btn text-fuchsia-500">Register</button></Link>
+</div>
+        }
 
             </div>
             <div className="ml-4">
@@ -71,6 +90,7 @@ const Nav = () => {
                     <svg className="col-start-2 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                 </label>
             </div>
+            <Tooltip id="my-tooltip" />
         </div>
     );
 };
