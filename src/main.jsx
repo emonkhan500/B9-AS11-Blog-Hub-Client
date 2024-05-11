@@ -30,6 +30,10 @@ const router = createBrowserRouter([
     errorElement:<Error></Error>,
     children:[
       {
+         path:'/',
+         element:<Home></Home>
+      },
+      {
         path:'/addBlog',
         element:<AddBlog></AddBlog>
       },
@@ -60,9 +64,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-    <ChakraProvider>
+   
     <RouterProvider router={router} />
-    </ChakraProvider>
+   
     <ToastContainer></ToastContainer>
     </AuthProvider>
   </React.StrictMode>,

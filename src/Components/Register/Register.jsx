@@ -42,19 +42,25 @@ else if(!/[a-z]/.test(password)){
 setRegisterError('Password must have One Small letter!!')
 return
 }
+else if(!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password)){
+setRegisterError('Password must have One Special Character!!')
+return
+}
 createUser(email,password)
 .then(result=>{
   console.log(result)
   notify()
   updateUserProfile(name,photo)
+  
  // navigate
  .then(()=>{
-     navigate('/')
+    navigate('/')
  })
  
 })
 .catch(error=>{
-setRegisterError(error)
+    console.error('Error updating user profile:', error);
+setRegisterError(error.message)
 })
 
 
