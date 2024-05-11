@@ -15,6 +15,9 @@ import AllBlog from './Components/Allblog/AllBlog.jsx';
 import FeaturedBlog from './Components/FeaturedBLog/FeaturedBlog.jsx';
 import WishList from './Components/WishLilsh/WishList.jsx';
 import Register from './Components/Register/Register.jsx';
+import PrivateRoute from '../PrivateRoute/PrivateRoute.jsx';
+import AuthProvider from './Components/provider/AuthProvider.jsx';
+import { ToastContainer } from 'react-toastify';
 
 
 const router = createBrowserRouter([
@@ -36,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/wishlist',
-        element:<WishList></WishList>
+        element:<PrivateRoute><WishList></WishList></PrivateRoute>
       },
       {
         path:'/register',
@@ -48,6 +51,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    <ToastContainer></ToastContainer>
+    </AuthProvider>
   </React.StrictMode>,
 )
