@@ -19,12 +19,15 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute.jsx';
 import AuthProvider from './Components/provider/AuthProvider.jsx';
 import { ToastContainer } from 'react-toastify';
 import Login from './Components/Login/Login.jsx';
+import Error from './Components/Error/Error.jsx';
+import { ChakraProvider } from '@chakra-ui/react';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     children:[
       {
         path:'/addBlog',
@@ -57,7 +60,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
+    <ChakraProvider>
     <RouterProvider router={router} />
+    </ChakraProvider>
     <ToastContainer></ToastContainer>
     </AuthProvider>
   </React.StrictMode>,

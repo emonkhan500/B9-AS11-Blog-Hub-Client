@@ -45,7 +45,7 @@ const handleSignOut=()=>{
             <li><NavLink to='/allBlogs' className={({ isActive }) => isActive ? 'text-green-500 border p-2 rounded-md border-green-600 font-mono' : 'text-xl'}>All blogs</NavLink></li>
             <li><NavLink to='/featuredBlogs' className={({ isActive }) => isActive ? 'text-green-500 border p-2 rounded-md border-green-600 font-mono' : 'text-xl'}>Featured Blogs</NavLink></li>
             <li><NavLink to='/wishlist' className={({ isActive }) => isActive ? 'text-green-500 border p-2 rounded-md border-green-600 font-mono' : 'text-xl'}>Wishlist</NavLink></li>
-            <li><NavLink to='/register' className={({ isActive }) => isActive ? 'text-green-500 border p-2 rounded-md border-green-600 font-mono' : 'text-xl'}>Register</NavLink></li>
+            
         </div>
     </>
 
@@ -74,11 +74,11 @@ const handleSignOut=()=>{
         {
           user?<>
           
-<Link onClick={handleSignOut}> <button className="btn text-fuchsia-500">Sign Out</button></Link>
+<Link onClick={handleSignOut}> <button className="btn border-green-600 text-green-500">Sign Out</button></Link>
 </> :
 <div className="flex gap-3">
-<Link to='/login'> <button className="btn text-fuchsia-500">Login</button></Link>
-<Link to='/register'> <button className="btn text-fuchsia-500">Register</button></Link>
+<Link to='/login'> <button className="btn  border-green-600 text-green-500">Login</button></Link>
+<Link to='/register'> <button className="btn border-green-600 text-green-500">Register</button></Link>
 </div>
         }
 
