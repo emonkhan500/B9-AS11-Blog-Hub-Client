@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
-
+import Swal from 'sweetalert2'
 const AddBlog = () => {
     useEffect(()=>{
         document.title='Add Blog'
@@ -15,34 +15,34 @@ const handleAddBlog = (e) => {
     const image = e.target.image.value;
     const title = e.target.title.value;
     const category = e.target.category.value;
-    
+    const time = new Date()
     const description = e.target.description.value;
     const longdescription = e.target.longdescription.value;
     
-    const blog = { image, title,category, description,longdescription};
+    const blog = { image,time, title,category, description,longdescription};
     console.log(blog);
 
     // send data to server
-    // fetch('https://b9-assignment10-server-ten.vercel.app/spot',{
-    //     method:'POST',
-    //     headers:{
-    //         'content-type':'application/json'
-    //     },
-    //     body:JSON.stringify(place)
-    // })
-    // .then(res =>res.json())
-    // .then(data=>{
-    //     console.log(data)
-    //     if(data.insertedId){
-    //         Swal.fire({
-    //           title: 'Success!',
-    //           text: 'spot added successfully',
-    //           icon: 'success',
-    //           confirmButtonText: 'Cool'
-    //         })
-    //        navigate('/')
-    //       }
-    // })
+    fetch('http://localhost:5000/blog',{
+        method:'POST',
+        headers:{
+            'content-type':'application/json'
+        },
+        body:JSON.stringify(blog)
+    })
+    .then(res =>res.json())
+    .then(data=>{
+        console.log(data)
+        if(data.insertedId){
+            Swal.fire({
+              title: 'Success!',
+              text: 'Blog added successfully',
+              icon: 'success',
+              confirmButtonText: 'Cool'
+            })
+           navigate('/')
+          }
+    })
     
   };
 
@@ -64,7 +64,7 @@ const handleAddBlog = (e) => {
                         
                         <option value="Fashion">Fashion</option>
                         <option value="Travel">Travel</option>
-                        <option value="Food">Food</option>
+                        <option value="Art">Art</option>
                        
                     </select>
                 </div>

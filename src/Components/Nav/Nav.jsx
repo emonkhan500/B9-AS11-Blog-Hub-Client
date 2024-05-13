@@ -60,7 +60,7 @@ const handleSignOut=()=>{
                         {navLinks}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost text-xl font-mono font-bold">Blogs <span className="font-bold text-purple-600">List</span></Link>
+                <Link to='/' className="btn btn-ghost text-xl font-mono font-bold">Blog <span className="font-bold text-purple-600">Hub</span></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

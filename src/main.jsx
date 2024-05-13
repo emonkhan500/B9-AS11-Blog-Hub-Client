@@ -21,6 +21,7 @@ import { ToastContainer } from 'react-toastify';
 import Login from './Components/Login/Login.jsx';
 import Error from './Components/Error/Error.jsx';
 import { ChakraProvider } from '@chakra-ui/react';
+import Details from './Components/Allblog/Details.jsx';
 
 
 const router = createBrowserRouter([
@@ -39,7 +40,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/allBlogs',
-        element:<AllBlog></AllBlog>
+        element:<AllBlog></AllBlog>,
+        loader:()=>fetch('http://localhost:5000/blog')
       },
       {
         path:'/featuredBlogs',
@@ -56,6 +58,11 @@ const router = createBrowserRouter([
       {
         path:'/login',
         element:<Login></Login>
+      },
+      {
+        path:'/details/:id',
+        element:<PrivateRoute><Details></Details></PrivateRoute>,
+       loader:()=>fetch('http://localhost:5000/blog')
       }
     ]
   },
