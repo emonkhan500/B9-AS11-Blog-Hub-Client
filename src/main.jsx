@@ -22,6 +22,7 @@ import Login from './Components/Login/Login.jsx';
 import Error from './Components/Error/Error.jsx';
 import { ChakraProvider } from '@chakra-ui/react';
 import Details from './Components/Allblog/Details.jsx';
+import Update from './Components/Allblog/UpdateBlog/Update.jsx';
 
 
 const router = createBrowserRouter([
@@ -63,6 +64,12 @@ const router = createBrowserRouter([
         path:'/details/:id',
         element:<PrivateRoute><Details></Details></PrivateRoute>,
        loader:()=>fetch('http://localhost:5000/blog')
+      },
+      {
+        path:'/update/:id',
+        element:<PrivateRoute></PrivateRoute>,
+        loader:({params})=>fetch(`http://localhost:5000/blog/${params.id}`)
+
       }
     ]
   },

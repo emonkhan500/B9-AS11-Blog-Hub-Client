@@ -1,14 +1,46 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const ShowAllBlog = ({blog}) => {
+    const{user,loading}=useContext(AuthContext)
+    if(loading){
+        return <div className='text-center'><span className="loading loading-bars loading-lg"></span></div>
+    }
     const {
         image ,_id,time,title,category,
         description,
         longdescription}=blog
+        const wishBlog={ userEmail:user.email,...blog}
+        delete wishBlog._id
+const handleWish=()=>{
+    fetch('http://localhost:5000/wishlist',{
+        method:'POST',
+        headers:{
+            'content-type':'application/json'
+        },
+
+    body:JSON.stringify(wishBlog )
+    })
+    .then(res =>res.json())
+    .then(data=>{
+        console.log(data)
+        if(data.insertedId){
+            Swal.fire({
+              title: 'Success!',
+              text: 'Added To Wishlist',
+              icon: 'success',
+              confirmButtonText: 'Cool'
+            })
+           
+          }
+    })
+}
+
     return (
-        <div className="backdrop-blur-lg rounded-lg shadow-xl">
-            <div className="card w-96 bg-white">
+        <div className="backdrop-blur-lg rounded-lg shadow-xl h-full">
+            <div className="card h-full bg-white ">
                 <figure className="rounded-t-xl">
                     <img src={image} alt="Shoes" className="w-full h-56 object-cover" />
                 </figure>
@@ -17,8 +49,8 @@ const ShowAllBlog = ({blog}) => {
                     <h2 className="card-title text-start w-full">{title}</h2>
                     <p className=''>{description}</p>
                     <div className="card-actions w-full flex justify-between mt-6 items-center">
-                        <Link to={`/details/:${_id}`}><button className='btn btn-accent'>View Details</button></Link>
-                        <Link to='/wishlist'><button className='btn btn-warning'>Add to Wishlist</button></Link>
+                        <Link to={`/details/${_id}`}><button className='btn btn-accent'>View Details</button></Link>
+                        <button onClick={handleWish} className='btn btn-warning'>Add to Wishlist</button>
                     </div>
                     
                         

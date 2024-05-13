@@ -1,42 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../provider/AuthProvider';
-import Swal from 'sweetalert2'
 
-const ShowRecentBlog = ({blog}) => {
-    const{user}=useContext(AuthContext)
+const ShowWishList = ({blog}) => {
     const {
         image ,_id,time,title,category,
         description,
         longdescription}=blog
-const wishBlog={userEmail:user?.email,...blog}
-const handleWish=()=>{
-    fetch('http://localhost:5000/wishlist',{
-        method:'POST',
-        headers:{
-            'content-type':'application/json'
-        },
-
-    body:JSON.stringify(wishBlog )
-    })
-    .then(res =>res.json())
-    .then(data=>{
-        console.log(data)
-        if(data.insertedId){
-            Swal.fire({
-              title: 'Success!',
-              text: 'Added To Wishlist',
-              icon: 'success',
-              confirmButtonText: 'Cool'
-            })
-           
-          }
-    })
-}
-
     return (
         <div className="backdrop-blur-lg rounded-lg shadow-xl">
-        <div className="card w-96 bg-white">
+        <div className="card h-full bg-white">
             <figure className="rounded-t-xl">
                 <img src={image} alt="Shoes" className="w-full h-56 object-cover" />
             </figure>
@@ -46,7 +18,7 @@ const handleWish=()=>{
                 <p className=''>{description}</p>
                 <div className="card-actions w-full flex justify-between mt-6 items-center">
                    <Link to={`/details/${_id}`}> <button className='btn btn-accent'>View Details</button></Link>
-                   <button onClick={handleWish} className='btn btn-warning'>Add to Wishlist</button>
+                   <button  className='btn btn-warning'>Remove </button>
                 </div>
                 
                     
@@ -57,4 +29,4 @@ const handleWish=()=>{
     );
 };
 
-export default ShowRecentBlog;
+export default ShowWishList;

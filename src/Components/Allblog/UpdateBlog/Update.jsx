@@ -1,31 +1,31 @@
-import React, { useContext, useEffect } from 'react';
-import { AuthContext } from '../provider/AuthProvider';
-import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2'
-const AddBlog = () => {
-    useEffect(()=>{
-        document.title='Add Blog'
-    },[])
+import React from 'react';
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-    const{user}=useContext(AuthContext)
+const Update = () => {
+    const blog =useLoaderData()
+    const { id } = useParams();
+    const{_id,image, title,category, description,longdescription}=blog
+
 const navigate=useNavigate()
-const email =user.email
-
-const handleAddBlog = (e) => {
+const handleUpdate=e=>{
     e.preventDefault();
     const image = e.target.image.value;
     const title = e.target.title.value;
     const category = e.target.category.value;
-    const time = new Date()
+    
     const description = e.target.description.value;
     const longdescription = e.target.longdescription.value;
     
-    const blog = {email, image,time, title,category, description,longdescription};
+    const blog = { image, title,category, description,longdescription};
     console.log(blog);
+    
+   
+    
 
-    // send data to server
-    fetch('http://localhost:5000/blog',{
-        method:'POST',
+     // send data to server
+     fetch(`http://localhost:5000/blog/${id}`,{
+        method:'PUT',
         headers:{
             'content-type':'application/json'
         },
@@ -34,30 +34,35 @@ const handleAddBlog = (e) => {
     .then(res =>res.json())
     .then(data=>{
         console.log(data)
-        if(data.insertedId){
+        if(data.modifiedCount){
             Swal.fire({
               title: 'Success!',
-              text: 'Blog added successfully',
+              text: 'blog updated successfully',
               icon: 'success',
               confirmButtonText: 'Cool'
             })
            navigate('/')
           }
     })
-    
-  };
+}
 
     return (
-        <div className="bg-gray-100 p-6 mt-11 md:p-12">
+         
+      
+
+
+      
+
+      <div className="bg-gray-100 p-6 mt-11 md:p-12">
             <h2 className="text-3xl font-extrabold text-center mb-8 text-cyan-300">Add a Blog</h2>
-            <form onSubmit={handleAddBlog}>
+            <form onSubmit={handleUpdate}>
                 <div className="mb-8">
                     <label className="block mb-2">Image URL</label>
-                    <input type="text" name="image" placeholder="Image URL" className="input input-bordered w-full" />
+                    <input type="text"  defaultValue={image} name="image" placeholder="Image URL" className="input input-bordered w-full" />
                 </div>
                 <div className="mb-8">
                     <label className="block mb-2">Title</label>
-                    <input type="text" name="title" placeholder="Title" className="input input-bordered w-full" />
+                    <input type="text"defaultValue={title} name="title" placeholder="Title" className="input input-bordered w-full" />
                 </div>
                 <div className="mb-8">
                     <label className="block mb-2">Category</label>
@@ -71,16 +76,18 @@ const handleAddBlog = (e) => {
                 </div>
                 <div className="mb-8">
                     <label className="block mb-2">Short Description</label>
-                    <input type="text" name="description" placeholder="Short Description" className="input input-bordered w-full" />
+                    <input type="text" defaultValue={description} name="description" placeholder="Short Description" className="input input-bordered w-full" />
                 </div>
                 <div className="mb-8">
                     <label className="block mb-2">Long Description</label>
-                    <input type="text" name="longdescription" placeholder="Long Description" className="input input-bordered w-full" />
+                    <input type="text" defaultValue={longdescription} name="longdescription" placeholder="Long Description" className="input input-bordered w-full" />
                 </div>
-                <button type="submit" className="btn btn-block text-white btn-success">Submit</button>
+                <button type="submit" className="btn btn-block text-white btn-success">Update</button>
             </form>
         </div>
+    
+    
     );
 };
 
-export default AddBlog;
+export default Update;

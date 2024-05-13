@@ -75,7 +75,7 @@ const Details = () => {
             </p>
           </div>
           
-          
+         <Link to={`/update/${id}`}> <button className="btn btn-warning">Update Blog</button></Link>
         </div>
         <div className="flex flex-col justify-end mt-7 mr-60 md:mr-80">
             <div>
