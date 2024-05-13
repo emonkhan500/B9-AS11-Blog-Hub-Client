@@ -21,10 +21,10 @@ const AllBlog = () => {
     };
 
     return (
-        <div>
+        <div className='mt-20'>
             <h1 className="text-4xl mb-6 font-bold text-gray-500">All Tourist Spot in Asia</h1>
             <div className='flex items-center justify-center gap-14'>
-            <div className=''>
+            <div className='mt-5'>
                 <details className="dropdown">
                     <summary className="m-1 px-6 py-3 rounded-lg bg-[#23BE0A] hover:bg-[#23BE0Aac] active:scale-95 text-white text-lg font-semibold">Sort By Category</summary>
                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
@@ -34,8 +34,8 @@ const AllBlog = () => {
                     </ul>
                 </details>
             </div>
-                <div>
-<input className='border-2 px-6 py-3 rounded-lg border-red-800'placeholder='Search here' type="text" />
+                <div >
+<input className='border-2 px-6 py-3 mt-5 rounded-lg border-red-800'placeholder='Search here' type="text" />
                 </div>
             </div>
             <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 mt-12">

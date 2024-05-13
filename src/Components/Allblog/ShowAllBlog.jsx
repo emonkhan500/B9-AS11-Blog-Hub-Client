@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ShowAllBlog = ({blog}) => {
     const {
@@ -16,8 +17,8 @@ const ShowAllBlog = ({blog}) => {
                     <h2 className="card-title text-start w-full">{title}</h2>
                     <p className=''>{description}</p>
                     <div className="card-actions w-full flex justify-between mt-6 items-center">
-                        <button className='btn btn-accent'>View Details</button>
-                        <button className='btn btn-warning'>Add to Wishlist</button>
+                        <Link to={`/details/:${_id}`}><button className='btn btn-accent'>View Details</button></Link>
+                        <Link to='/wishlist'><button className='btn btn-warning'>Add to Wishlist</button></Link>
                     </div>
                     
                         

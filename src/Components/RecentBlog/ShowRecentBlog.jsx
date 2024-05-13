@@ -18,7 +18,7 @@ const ShowRecentBlog = ({blog}) => {
                 <p className=''>{description}</p>
                 <div className="card-actions w-full flex justify-between mt-6 items-center">
                    <Link to={`/details/${_id}`}> <button className='btn btn-accent'>View Details</button></Link>
-                    <button className='btn btn-warning'>Add to Wishlist</button>
+                   <Link to='/wishlist'><button className='btn btn-warning'>Add to Wishlist</button></Link>
                 </div>
                 
                     
