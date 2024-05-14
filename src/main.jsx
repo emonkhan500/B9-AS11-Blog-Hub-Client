@@ -12,7 +12,7 @@ import Root from './Components/Root/Root.jsx';
 import Home from './Components/Home/Home.jsx';
 import AddBlog from './Components/AddBlog/AddBlog.jsx';
 import AllBlog from './Components/Allblog/AllBlog.jsx';
-import FeaturedBlog from './Components/FeaturedBLog/FeaturedBlog.jsx';
+
 import WishList from './Components/WishLilsh/WishList.jsx';
 import Register from './Components/Register/Register.jsx';
 import PrivateRoute from '../PrivateRoute/PrivateRoute.jsx';
@@ -20,10 +20,16 @@ import AuthProvider from './Components/provider/AuthProvider.jsx';
 import { ToastContainer } from 'react-toastify';
 import Login from './Components/Login/Login.jsx';
 import Error from './Components/Error/Error.jsx';
-import { ChakraProvider } from '@chakra-ui/react';
+
 import Details from './Components/Allblog/Details.jsx';
 import Update from './Components/Allblog/UpdateBlog/Update.jsx';
+import Featureds from './Components/FeaturedBLog/Featureds.jsx';
 
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from '@tanstack/react-query'
 
 const router = createBrowserRouter([
   {
@@ -44,10 +50,11 @@ const router = createBrowserRouter([
         element:<AllBlog></AllBlog>,
         loader:()=>fetch('http://localhost:5000/blog')
       },
+      
       {
-        path:'/featuredBlogs',
-        element:<FeaturedBlog></FeaturedBlog>,
-        loader:()=>fetch('http://localhost:5000/blog')
+        path:'/featureds',
+        element:<Featureds></Featureds>,
+        
       },
       {
         path:'/wishlist',
@@ -75,14 +82,21 @@ const router = createBrowserRouter([
     ]
   },
 ]);
+const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
+
+
+<QueryClientProvider client={queryClient}>
+<AuthProvider>
    
-    <RouterProvider router={router} />
-   
-    <ToastContainer></ToastContainer>
-    </AuthProvider>
+   <RouterProvider router={router} />
+  
+   <ToastContainer></ToastContainer>
+   </AuthProvider>
+    </QueryClientProvider>
+
+    
   </React.StrictMode>,
 )

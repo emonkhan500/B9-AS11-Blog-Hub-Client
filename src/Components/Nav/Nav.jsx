@@ -43,8 +43,9 @@ const handleSignOut=()=>{
             <li><NavLink to='/' className={ ({ isActive }) => isActive ? 'text-green-500 border p-2 rounded-md border-green-600 font-mono' : 'text-xl'}>Home</NavLink></li>
             <li><NavLink to='/addBlog' className={({ isActive }) => isActive ? 'text-green-500 border p-2 rounded-md border-green-600 font-mono' : 'text-xl'}>Add Blog</NavLink></li>
             <li><NavLink to='/allBlogs' className={({ isActive }) => isActive ? 'text-green-500 border p-2 rounded-md border-green-600 font-mono' : 'text-xl'}>All blogs</NavLink></li>
-            <li><NavLink to='/featuredBlogs' className={({ isActive }) => isActive ? 'text-green-500 border p-2 rounded-md border-green-600 font-mono' : 'text-xl'}>Featured Blogs</NavLink></li>
+            <li><NavLink to='/featureds' className={({ isActive }) => isActive ? 'text-green-500 border p-2 rounded-md border-green-600 font-mono' : 'text-xl'}>Featured Blogs</NavLink></li>
             <li><NavLink to='/wishlist' className={({ isActive }) => isActive ? 'text-green-500 border p-2 rounded-md border-green-600 font-mono' : 'text-xl'}>Wishlist</NavLink></li>
+            
             
         </div>
     </>

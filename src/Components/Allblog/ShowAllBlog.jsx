@@ -5,14 +5,12 @@ import Swal from 'sweetalert2'
 
 const ShowAllBlog = ({blog}) => {
     const{user,loading}=useContext(AuthContext)
-    if(loading){
-        return <div className='text-center'><span className="loading loading-bars loading-lg"></span></div>
-    }
+  
     const {
         image ,_id,time,title,category,
         description,
         longdescription}=blog
-        const wishBlog={ userEmail:user.email,...blog}
+        const wishBlog={ userEmail:user?.email,...blog}
         delete wishBlog._id
 const handleWish=()=>{
     fetch('http://localhost:5000/wishlist',{
@@ -37,7 +35,9 @@ const handleWish=()=>{
           }
     })
 }
-
+if(loading){
+    return <div className='text-center'><span className="loading loading-bars loading-lg"></span></div>
+}
     return (
         <div className="backdrop-blur-lg rounded-lg shadow-xl h-full">
             <div className="card h-full bg-white ">

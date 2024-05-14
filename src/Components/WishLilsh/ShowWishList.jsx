@@ -17,7 +17,7 @@ const ShowWishList = ({blog}) => {
               showCancelButton: true,
               confirmButtonColor: "#3085d6",
               cancelButtonColor: "#d33",
-              confirmButtonText: "Yes, delete it!",
+              confirmButtonText: "Yes, remove it!",
             
             
               }).then((result) => {
@@ -32,7 +32,7 @@ const ShowWishList = ({blog}) => {
                   if (data.deletedCount > 0) {
                     Swal.fire(
                     'Deleted!',
-                    'Your spot has been deleted.',
+                    'Blog has Removed.',
                     'success'
                     )
                    window.location.reload()

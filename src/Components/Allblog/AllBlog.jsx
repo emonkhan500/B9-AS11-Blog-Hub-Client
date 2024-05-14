@@ -6,9 +6,7 @@ import { AuthContext } from "../provider/AuthProvider";
 const AllBlog = () => {
 const{loading}=useContext(AuthContext)
 
-if(loading){
-  return <div className='text-center'><span className="loading loading-bars loading-lg"></span></div>
-}
+
   
     useEffect(()=>{
         document.title='ALL Blog'
@@ -39,6 +37,9 @@ if(loading){
     );
     setBlogs(filteredBlogs);
   };
+  if(loading){
+    return <div className='text-center'><span className="loading loading-bars loading-lg"></span></div>
+  }
 
   return (
     <div className="mt-20">

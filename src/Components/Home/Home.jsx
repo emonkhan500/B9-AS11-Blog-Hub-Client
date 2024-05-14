@@ -9,12 +9,13 @@ import Galary from '../Extra/Galary';
 
 const Home = () => {
     const{loading}=useContext(AuthContext)
-    if(loading){
-        return  <div className='text-center'><span className="loading loading-bars loading-lg"></span></div>
-    }
+   
     useEffect(()=>{
         document.title='Home'
     },[])
+    if(loading){
+        return  <div className='text-center'><span className="loading loading-bars loading-lg"></span></div>
+    }
     return (
         <div>
             <Banner></Banner>

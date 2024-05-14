@@ -65,6 +65,7 @@ const Details = () => {
             confirmButtonText: "Cool",
           });
           setAllComments([...allComments, commentData]);
+          e.target.reset()
         }
       });
   };
@@ -93,7 +94,7 @@ const Details = () => {
               ></path>
             </svg>
             <h2 className="font-exo pb-1 font-semibold text-xl inline">
-              Go Back
+              Home
             </h2>
           </div>
         </div>
