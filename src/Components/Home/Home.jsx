@@ -5,6 +5,7 @@ import RecentBlog from '../RecentBlog/RecentBlog';
 
 import { AuthContext } from '../provider/AuthProvider';
 import Contact from '../Extra/Contact';
+import Galary from '../Extra/Galary';
 
 const Home = () => {
     const{loading}=useContext(AuthContext)
@@ -19,6 +20,7 @@ const Home = () => {
             <Banner></Banner>
             <RecentBlog></RecentBlog>
             <Newsletter></Newsletter>
+            <Galary></Galary>
             <Contact></Contact>
         </div>
     );
