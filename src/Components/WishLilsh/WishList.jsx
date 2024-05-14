@@ -3,6 +3,13 @@ import { AuthContext } from "../provider/AuthProvider";
 import ShowWishList from "./ShowWishList";
 
 const WishList = () => {
+
+  
+    useEffect(()=>{
+        document.title='WishList'
+    },[])
+  
+
   const [wishBlog, setWishBlg] = useState([]);
 //   console.log(wishBlog);
   const { user } = useContext(AuthContext);

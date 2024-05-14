@@ -1,8 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import DataTable from 'react-data-table-component';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
 
 const FeaturedBlog = () => {
+ 
+    const{loading}=useContext(AuthContext)
+    if(loading){
+        return  <div className='text-center'><span className="loading loading-bars loading-lg"></span></div>
+    }
+
+        useEffect(()=>{
+            document.title='Featured Blog'
+        },[])
+    
     const loadedBlogs = useLoaderData();
     const [blogs, setBlogs] = useState([]);
 

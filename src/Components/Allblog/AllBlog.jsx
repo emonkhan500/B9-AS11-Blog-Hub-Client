@@ -1,8 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ShowAllBlog from "./ShowAllBlog";
+import { AuthContext } from "../provider/AuthProvider";
 
 const AllBlog = () => {
+const{loading}=useContext(AuthContext)
+
+if(loading){
+  return <div className='text-center'><span className="loading loading-bars loading-lg"></span></div>
+}
+  
+    useEffect(()=>{
+        document.title='ALL Blog'
+    },[])
+
+  
   const loadedBlogs = useLoaderData();
   const [searchValue, setSearchValue] = useState("");
   const [blogs, setBlogs] = useState(loadedBlogs);
