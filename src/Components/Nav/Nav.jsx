@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import { delay, motion } from "framer-motion"
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
 import { AuthContext } from "../provider/AuthProvider";
@@ -50,7 +50,15 @@ const handleSignOut=()=>{
     </>
 
     return (
-        <div className="navbar bg-base-100 container px-4 mx-auto mt-3 shadow-sm">
+        <motion.h1
+        initial={{x:-2000}}
+        animate={{x:0}}
+        transition={{
+            duration:'1',
+            delay:'0'
+        }}
+        >
+            <div className="navbar bg-base-100 container px-4 mx-auto mt-3 shadow-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -92,6 +100,7 @@ const handleSignOut=()=>{
             </div>
             <Tooltip id="my-tooltip" />
         </div>
+        </motion.h1>
     );
 };
 

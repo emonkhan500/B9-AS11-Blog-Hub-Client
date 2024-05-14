@@ -10,6 +10,7 @@ const AddBlog = () => {
     const{user}=useContext(AuthContext)
 const navigate=useNavigate()
 const email =user.email
+const name= user.displayName
 
 const handleAddBlog = (e) => {
     e.preventDefault();
@@ -20,7 +21,7 @@ const handleAddBlog = (e) => {
     const description = e.target.description.value;
     const longdescription = e.target.longdescription.value;
     
-    const blog = {email, image,time, title,category, description,longdescription};
+    const blog = {name,email, image,time, title,category, description,longdescription};
     console.log(blog);
 
     // send data to server

@@ -1,4 +1,4 @@
-import React from 'react';
+import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
 const ShowWishList = ({blog}) => {
@@ -6,6 +6,42 @@ const ShowWishList = ({blog}) => {
         image ,_id,time,title,category,
         description,
         longdescription}=blog
+
+        const handleDelete = _id =>{
+            console.log(_id)
+            
+            Swal.fire({
+              title: "Are you sure?",
+              text: "You won't be able to revert this!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Yes, delete it!",
+            
+            
+              }).then((result) => {
+              if (result.isConfirmed) {
+                 fetch(`http://localhost:5000/wishlist/${_id}`,{
+                  method:'DELETE'
+                 })
+                .then((res) => res.json())
+                .then((data) => {
+                  console.log(data);
+            
+                  if (data.deletedCount > 0) {
+                    Swal.fire(
+                    'Deleted!',
+                    'Your spot has been deleted.',
+                    'success'
+                    )
+                   window.location.reload()
+                  }
+                });
+              }
+              });
+            }
+
     return (
         <div className="backdrop-blur-lg rounded-lg shadow-xl">
         <div className="card h-full bg-white">
@@ -18,7 +54,7 @@ const ShowWishList = ({blog}) => {
                 <p className=''>{description}</p>
                 <div className="card-actions w-full flex justify-between mt-6 items-center">
                    <Link to={`/details/${_id}`}> <button className='btn btn-accent'>View Details</button></Link>
-                   <button  className='btn btn-warning'>Remove </button>
+                   <button onClick={()=>handleDelete(blog._id)} className='btn btn-warning'>Remove </button>
                 </div>
                 
                     

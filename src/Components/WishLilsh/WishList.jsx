@@ -4,7 +4,7 @@ import ShowWishList from "./ShowWishList";
 
 const WishList = () => {
   const [wishBlog, setWishBlg] = useState([]);
-  console.log(wishBlog);
+//   console.log(wishBlog);
   const { user } = useContext(AuthContext);
   useEffect(() => {
     fetch(`http://localhost:5000/wishlist/${user?.email}`)

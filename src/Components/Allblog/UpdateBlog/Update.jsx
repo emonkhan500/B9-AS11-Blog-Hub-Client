@@ -6,6 +6,7 @@ const Update = () => {
     const blog =useLoaderData()
     const { id } = useParams();
     const{_id,image, title,category, description,longdescription}=blog
+    console.log(blog)
 
 const navigate=useNavigate()
 const handleUpdate=e=>{
