@@ -1,8 +1,16 @@
-# React + Vite
+# Website Name: Blog Hub
+# live link: 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ 
+- In featured blogs route data fetch by Tanstack Query.
+- In Home page user can see 6 recent blog
+- User can add blog to his wishlist
+ - You can check details of every property by clicking on View details Button.
+- User must have login to see some private Route
+- Website has dark and light mode
+- Responsive for all devices.
+- User can login using email and github
+- User can add blog in 3 different category
+
