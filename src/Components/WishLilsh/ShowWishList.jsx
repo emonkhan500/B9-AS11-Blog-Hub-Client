@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ShowWishList = ({blog}) => {
     const {
-        image ,_id,time,title,category,
+        image ,blogId ,_id,time,title,category,
         description,
         longdescription}=blog
 
@@ -53,8 +53,8 @@ const ShowWishList = ({blog}) => {
                 <h2 className="card-title text-start w-full">{title}</h2>
                 <p className=''>{description}</p>
                 <div className="card-actions w-full flex justify-between mt-6 items-center">
-                   <Link to={`/details/${_id}`}> <button className='btn btn-accent'>View Details</button></Link>
-                   <button onClick={()=>handleDelete(blog._id)} className='btn btn-warning'>Remove </button>
+                   <Link to={`/details/${blogId}`}> <button className='btn btn-accent'>View Details</button></Link>
+                   <button onClick={()=>handleDelete(_id)} className='btn btn-warning'>Remove </button>
                 </div>
                 
                     

@@ -9,7 +9,11 @@ const ShowRecentBlog = ({blog}) => {
         image ,_id,time,title,category,
         description,
         longdescription}=blog
-const wishBlog={userEmail:user?.email,...blog}
+
+
+const wishBlog={blogId:blog._id,userEmail:user?.email,...blog}
+
+delete wishBlog._id
 const handleWish=()=>{
     fetch('https://b9-assignment-11-server-one.vercel.app/wishlist',{
         method:'POST',

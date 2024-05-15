@@ -10,8 +10,9 @@ const ShowAllBlog = ({blog}) => {
         image ,_id,time,title,category,
         description,
         longdescription}=blog
-        const wishBlog={ userEmail:user?.email,...blog}
+        const wishBlog={blogId:blog._id, userEmail:user?.email,...blog}
         delete wishBlog._id
+        console.log(wishBlog)
 const handleWish=()=>{
     fetch('https://b9-assignment-11-server-one.vercel.app/wishlist',{
         method:'POST',
@@ -49,7 +50,7 @@ if(loading){
                     <h2 className="card-title text-start w-full">{title}</h2>
                     <p className=''>{description}</p>
                     <div className="card-actions w-full flex justify-between mt-6 items-center">
-                        <Link to={`/details/${_id}`}><button className='btn btn-accent'>View Details</button></Link>
+                        <Link to={`/details/${blog._id}`}><button className='btn btn-accent'>View Details</button></Link>
                         <button onClick={handleWish} className='btn btn-warning'>Add to Wishlist</button>
                     </div>
                     
