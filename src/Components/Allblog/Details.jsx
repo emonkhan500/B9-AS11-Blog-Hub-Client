@@ -20,7 +20,7 @@ const Details = () => {
 
   //  all comments
   useEffect(() => {
-    fetch("http://localhost:5000/comment")
+    fetch("https://b9-assignment-11-server-one.vercel.app/comment")
       .then((res) => res.json())
       .then((data) => {
         setAllComments(data);
@@ -48,7 +48,7 @@ const Details = () => {
     };
 
     // Send data to server
-    fetch("http://localhost:5000/comment", {
+    fetch("https://b9-assignment-11-server-one.vercel.app/comment", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -48,7 +48,7 @@ const router = createBrowserRouter([
       {
         path:'/allBlogs',
         element:<AllBlog></AllBlog>,
-        loader:()=>fetch('http://localhost:5000/blog')
+        loader:()=>fetch('https://b9-assignment-11-server-one.vercel.app/blog')
       },
       
       {
@@ -71,12 +71,12 @@ const router = createBrowserRouter([
       {
         path:'/details/:id',
         element:<PrivateRoute><Details></Details></PrivateRoute>,
-       loader:()=>fetch('http://localhost:5000/blog')
+       loader:()=>fetch('https://b9-assignment-11-server-one.vercel.app/blog')
       },
       {
         path:'/update/:id',
         element:<PrivateRoute><Update></Update></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/blog/${params.id}`)
+        loader:({params})=>fetch(`https://b9-assignment-11-server-one.vercel.app/blog/${params.id}`)
 
       }
     ]

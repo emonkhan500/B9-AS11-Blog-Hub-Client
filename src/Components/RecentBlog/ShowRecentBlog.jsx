@@ -11,7 +11,7 @@ const ShowRecentBlog = ({blog}) => {
         longdescription}=blog
 const wishBlog={userEmail:user?.email,...blog}
 const handleWish=()=>{
-    fetch('http://localhost:5000/wishlist',{
+    fetch('https://b9-assignment-11-server-one.vercel.app/wishlist',{
         method:'POST',
         headers:{
             'content-type':'application/json'

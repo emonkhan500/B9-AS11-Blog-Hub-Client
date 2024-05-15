@@ -14,7 +14,7 @@ const WishList = () => {
 //   console.log(wishBlog);
   const { user } = useContext(AuthContext);
   useEffect(() => {
-    fetch(`http://localhost:5000/wishlist/${user?.email}`)
+    fetch(`https://b9-assignment-11-server-one.vercel.app/wishlist/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setWishBlg(data);

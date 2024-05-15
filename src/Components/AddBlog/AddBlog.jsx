@@ -30,7 +30,7 @@ const handleAddBlog = (e) => {
     console.log(blog);
 
     // send data to server
-    fetch('http://localhost:5000/blog',{
+    fetch('https://b9-assignment-11-server-one.vercel.app/blog',{
         method:'POST',
         headers:{
             'content-type':'application/json'

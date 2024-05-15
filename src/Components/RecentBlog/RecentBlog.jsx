@@ -4,10 +4,10 @@ import ShowRecentBlog from './ShowRecentBlog';
 const RecentBlog = () => {
     const [blogs,setBlogs]=useState()
 useEffect(()=>{
-    fetch('http://localhost:5000/blog')
+    fetch('https://b9-assignment-11-server-one.vercel.app/blog')
     .then(res=>res.json())
     .then(data=>setBlogs(data.slice(0,6      )))
-},[])
+},[])                                 
 
     return (
         <div className='mt-20'>

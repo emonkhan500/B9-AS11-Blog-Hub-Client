@@ -25,7 +25,7 @@ const handleUpdate=e=>{
     
 
      // send data to server
-     fetch(`http://localhost:5000/blog/${id}`,{
+     fetch(`https://b9-assignment-11-server-one.vercel.app/blog/${id}`,{
         method:'PUT',
         headers:{
             'content-type':'application/json'

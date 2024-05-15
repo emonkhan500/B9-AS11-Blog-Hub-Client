@@ -13,7 +13,7 @@ const ShowAllBlog = ({blog}) => {
         const wishBlog={ userEmail:user?.email,...blog}
         delete wishBlog._id
 const handleWish=()=>{
-    fetch('http://localhost:5000/wishlist',{
+    fetch('https://b9-assignment-11-server-one.vercel.app/wishlist',{
         method:'POST',
         headers:{
             'content-type':'application/json'
