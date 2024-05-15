@@ -44,7 +44,7 @@ const{loading}=useContext(AuthContext)
   return (
     <div className="mt-20">
       <h1 className="text-4xl mb-6 font-bold text-gray-500">
-        All Tourist Spot in Asia
+        All Blogs in Blog Hub
       </h1>
       <div className="flex items-center justify-center gap-14">
         <div className="mt-5">
