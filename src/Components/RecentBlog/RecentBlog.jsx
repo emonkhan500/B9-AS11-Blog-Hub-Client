@@ -10,8 +10,9 @@ useEffect(()=>{
 },[])                                 
 
     return (
-        <div className='mt-20'>
-<h1 className='text-center text-4xl font-bold mt-20  text-green-400'>These Are Recently Added BLog</h1>
+        <div className='mt-10'>
+<h1 className='text-center md:text-3xl lg:text-4xl font-bold mt-20  text-green-500'>These Are Recently Added BLog</h1>
+<hr  className='w-72 mx-auto mt-5 border-2 border-green-500'/>
 
             <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 mt-5">
                 {
