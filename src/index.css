@@ -2,31 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.slide{
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: auto;
-    border-radius: 10px;
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
-
-
-    
-    
-}
-.slide1{
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('./assets/28-534x267.jpg');
+.slide {
+  @apply flex justify-center items-center w-full bg-center bg-no-repeat bg-cover mx-auto rounded-[10px];
 }
 
-.slide2{
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('./assets/34-730x486.jpg');
+/* Background image slides with dark overlay */
+.slide1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/28-534x267.jpg');
 }
-.slide3{
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('./assets/40-730x486.jpg');
+
+.slide2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/34-730x486.jpg');
+}
+
+.slide3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/40-730x486.jpg');
 }
