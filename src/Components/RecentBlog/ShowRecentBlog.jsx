@@ -43,7 +43,7 @@ console.log(wishBlog)
 
     return (
         <div className="backdrop-blur-lg rounded-lg shadow-xl">
-        <div className="card w-96 bg-white">
+        <div className="w-full card md:w-96 bg-white px-3">
             <figure className="rounded-t-xl">
                 <img src={image} alt="Shoes" className="w-full h-56 object-cover" />
             </figure>
