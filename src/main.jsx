@@ -91,7 +91,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 <QueryClientProvider client={queryClient}>
 <AuthProvider>
    
-   <RouterProvider fallbackElement={<div className='text-center'><span className="loading loading-bars loading-lg"></span></div>} router={router} />
+   <RouterProvider fallbackElement={<div className='text-center '><span className="loading loading-bars loading-lg"></span></div>} router={router} />
   
    <ToastContainer></ToastContainer>
    </AuthProvider>

@@ -6,7 +6,7 @@ import Home from '../Home/Home';
 
 const Root = () => {
     return (
-        <div>
+        <div className=''>
             <Nav></Nav>
             <Outlet></Outlet>
             

@@ -59,7 +59,7 @@ const handleSignOut=()=>{
             delay:'0'
         }}
         >
-            <div className="navbar bg-base-100 container px-4 mx-auto mt-3 shadow-sm">
+            <div className="navbar bg-base-100  px-4  mt-3 shadow-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,7 +69,9 @@ const handleSignOut=()=>{
                         {navLinks}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost text-xl font-mono font-bold">Blog <span className="font-bold text-purple-600">Hub</span></Link>
+                <Link> 
+                <img className="w-14 h-12" src="https://i.ibb.co/j9Ns7tr8/Chat-GPT-Image-May-18-2025-10-05-21-PM.png" alt="" />
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
