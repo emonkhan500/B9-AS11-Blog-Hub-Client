@@ -11,10 +11,13 @@ const ShowRecentBlog = ({blog}) => {
         longdescription}=blog
 
 
-const wishBlog={blogId:blog._id,userEmail:user?.email,...blog}
+
+
+const handleWish=()=>{
+    const wishBlog={blogId:blog._id,userEmail:user?.email,...blog}
 
 delete wishBlog._id
-const handleWish=()=>{
+console.log(wishBlog)
     fetch('https://b9-assignment-11-server-one.vercel.app/wishlist',{
         method:'POST',
         headers:{
