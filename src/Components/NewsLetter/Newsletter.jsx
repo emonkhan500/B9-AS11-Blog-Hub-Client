@@ -20,8 +20,8 @@ const Newsletter = () => {
         setEmail(e.target.value);
       }
   return (
-    <div className=" text-center mt-10 mb-12">
-      <div className=" container mx-auto shadow-xl rounded-sm ">
+    <div className="bg-[#b0afaf0d] text-center mt-10 border-t-2 border-green-600">
+      <div className="px-1 md:px-8 lg:px-28 shadow-xl rounded-sm ">
         <img className="h-44 w-36 pt-10 mx-auto" src={img} alt="" />
         <h1 className="mt-5 text-3xl font-bold">Subscribe Newsletter</h1>
         <p className="mt-3 mb-6">
@@ -29,13 +29,13 @@ const Newsletter = () => {
           progress, events, and latest news on <br /> Website
         </p>
         <div >
-         <form onSubmit={handleToast} className=" pb-20">
-         <input  className="bg-white   rounded-s-xl py-2 px-8"  placeholder="user@gmail.com" 
+         <form onSubmit={handleToast} className="pb-10 md:pb-20">
+         <input  className="bg-gray-200   rounded-s-xl py-3 px-5 md:px-8"  placeholder="user@gmail.com" 
           value={email}
               onChange={handleChange}
               name="email" required />
-          <input className="bg-[#f00] text-white px-5 rounded-e-xl
-               py-2" type="submit" id="id2" />
+          <input className="bg-gradient-to-r from-green-500 to-green-600 text-white px-5 rounded-e-xl
+               py-3" type="submit" id="id2" />
          </form>
         </div>
       </div>
