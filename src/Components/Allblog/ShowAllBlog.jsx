@@ -40,25 +40,25 @@ if(loading){
     return <div className='text-center'><span className="loading loading-bars loading-lg"></span></div>
 }
     return (
-        <div className="backdrop-blur-lg rounded-lg shadow-xl h-full">
-            <div className="card h-full bg-white ">
-                <figure className="rounded-t-xl">
-                    <img src={image} alt="Shoes" className="w-full h-56 object-cover" />
-                </figure>
-                <div className="card-body relative items-center text-start bg-gradient-to-bl from-orange-100 via-yellow-100 to-yellow-400 backdrop-blur rounded-b-xl">
-                    <p className="absolute font-mplus font-medium text-lg bg-green-400 p-2 rounded-md -top-5 right-5 text-white">{category}</p>
-                    <h2 className="card-title text-start w-full">{title}</h2>
-                    <p className=''>{description}</p>
-                    <div className="card-actions w-full flex justify-between mt-6 items-center">
-                        <Link to={`/details/${blog._id}`}><button className='btn btn-accent'>View Details</button></Link>
-                        <button onClick={handleWish} className='btn btn-warning'>Add to Wishlist</button>
-                    </div>
-                    
-                        
-                    
+        <div className="backdrop-blur-lg rounded-lg shadow-xl">
+        <div className="w-full py-3 rounded-lg  bg-white px-1 md:px-3">
+            <figure className="rounded-t-xl">
+                <img src={image} alt="Shoes" className="w-full lg:h-56 object-cover" />
+            </figure>
+            <div className="px-3 py-3 pt-6 relative items-center text-start bg-gradient-to-bl from-orange-100 via-yellow-100 to-yellow-400 backdrop-blur rounded-b-xl">
+                <p className="absolute font-mplus font-medium text-lg bg-green-400 p-2 rounded-md -top-5 right-5 text-white">{category}</p>
+                <h2 className="card-title text-start w-full">{title}</h2>
+                <p className=''>{description}</p>
+                <div className="card-actions w-full flex justify-between mt-6 items-center">
+                   <Link to={`/details/${_id}`}> <button className='px-3 py-2 rounded bg-gradient-to-r from-green-500 to-green-600 text-white font-medium'>View Details</button></Link>
+                   <button onClick={handleWish} className='px-3 py-2 rounded bg-gradient-to-r from-green-500 to-green-600 text-white font-medium'>Add to Wishlist</button>
                 </div>
+                
+                    
+                
             </div>
         </div>
+    </div>
     );
 };
 

@@ -42,14 +42,14 @@ const{loading}=useContext(AuthContext)
   }
 
   return (
-    <div className="mt-20">
-      <h1 className="text-4xl mb-6 font-bold text-gray-500">
+    <div className="mt-10  md:mt-20">
+      <h1 className="text-2xl md:text-4xl text-center md:mb-6 font-bold text-green-500">
         All Blogs in Blog Hub
       </h1>
-      <div className="flex items-center justify-center gap-14">
+      <div className="flex flex-col md:flex-row items-center justify-center md:gap-14">
         <div className="mt-5">
           <details className="dropdown">
-            <summary className="m-1 px-6 py-3 rounded-lg bg-[#23BE0A] hover:bg-[#23BE0Aac] active:scale-95 text-white text-lg font-semibold">
+            <summary className="m-1 px-6 py-2 md:py-3 rounded-lg bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-semibold">
               Sort By Category
             </summary>
             <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
@@ -67,19 +67,19 @@ const{loading}=useContext(AuthContext)
         </div>
         <div>
           <input
-            className="border-2 px-6 py-3 mt-5 rounded-lg border-red-800"
+            className="bg-gray-100 outline-none px-6 py-3 mt-5 rounded-s-lg "
             placeholder="Search here"
             type="text"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
           />
-          <button className="btn btn-success" onClick={handleSearch}>
+          <button className="  py-3 px-2 rounded-e-lg bg-gradient-to-r from-green-500 to-green-600 text-white" onClick={handleSearch}>
             Search
           </button>
         </div>
       </div>
       {blogs.length > 0 ? (
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 mt-12">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:mt-12 px-2 lg:px-6 ">
           {blogs.map((blog) => (
             <ShowAllBlog key={blog.id} blog={blog} />
           ))}
