@@ -2,7 +2,7 @@ import React from 'react';
 
 const Galary = () => {
     return (
-        <div className='mt-20 mb-32 rounded bg-gradient-to-br to-orange-300 via-yellow-200 from-yellow-300'>
+        <div className='mt-10 mb-32 rounded bg-gradient-to-br to-orange-300 via-yellow-200 from-yellow-300'>
 
             <div className='px-5 py-8'>
             <div className='text-center text-green-500 mb-10 '  >
