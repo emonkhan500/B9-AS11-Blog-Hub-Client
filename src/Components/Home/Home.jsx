@@ -22,7 +22,7 @@ const Home = () => {
             <RecentBlog></RecentBlog>
             <Newsletter></Newsletter>
             <Galary></Galary>
-            <Contact></Contact>
+            
         </div>
     );
 };

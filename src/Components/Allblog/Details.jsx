@@ -100,7 +100,7 @@ const Details = () => {
         </div>
       </Link>
 
-      <div className="my-10 md:w-[80%] mx-auto bg-gradient-to-br to-orange-300 via-yellow-200 from-yellow-300 px-1 md:px-3 py-10 md:py-16 rounded-2xl flex flex-col justify-center items-center md:gap-[10%]">
+      <div className="my-10  mx-auto bg-gradient-to-br to-orange-300 via-yellow-200 from-yellow-300 px-1 md:px-3 py-10 md:py-16 rounded-2xl flex flex-col justify-center items-center md:gap-[10%]">
         {image && <img className="w-full rounded-md" src={image} alt={title} />}
         <h2 className="font-exo text-xl md:text-3xl font-semibold text-[#331a15] my-5">#{title}</h2>
         <div className="md:w-[90%] w-[95%] mx-auto">
@@ -126,36 +126,30 @@ const Details = () => {
 
           {userEmail === email && (
             <Link to={`/update/${id}`}>
-              <button className="btn btn-warning">Update Blog</button>
+              <button className="px-2 py-2 border rounded-lg text-white   font-semibold bg-gradient-to-r from-green-500 to-green-600">Update Blog</button>
             </Link>
           )}
         </div>
 
-        <div>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-5 ">
           {filteredComments.map((com) => (
             <ShowComment  com={com} />
           ))}
         </div>
 
-        <div className="flex flex-col justify-end mt-7 mr-60  md:mr-80">
+        <div className="flex   mt-7 justify-center">
         {userEmail === email ? (
             <p className="text-red-600">You cannot comment on your own blog.</p>
           ) : (
-            <form onSubmit={handleComment}>
-              <label>
-                <textarea
-                  className="py-2 px-5 justify-start"
-                  placeholder="Comment here"
-                  name="comment"
-                  rows={3}
-                  cols={20}
-                  required
-                />
-              </label>
-              <button type="submit" className="btn btn-accent relative -mt-2">
-                Comment
-              </button>
-            </form>
+            
+         <form onSubmit={handleComment} className="pb-10 md:pb-20 w-full">
+         <input  className="bg-gray-200   rounded-s-xl py-4 px-5 md:px-8"  placeholder="Comment Here"
+        
+              name="comment" required />
+          <input className="bg-gradient-to-r from-green-500 to-green-600 text-white px-5 rounded-e-xl
+               py-4" type="submit" id="id2" />
+         </form>
+       
           )}
         </div>
       </div>
