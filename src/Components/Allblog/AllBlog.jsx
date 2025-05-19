@@ -85,7 +85,7 @@ const{loading}=useContext(AuthContext)
           ))}
         </div>
       ) : (
-        <p className="mt-5 text-center text-red-600">
+        <p className="mt-5 text-center text-green-500">
           No blog found !
         </p>
       )}

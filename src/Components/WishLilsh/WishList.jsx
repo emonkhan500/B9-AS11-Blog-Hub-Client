@@ -22,8 +22,11 @@ const WishList = () => {
     // console.log('jfdhhf')
   }, [user]);
   return (
-    <div className="mt-20">
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 mt-12">
+    <div className="mt-8 lg:mt-20">
+      <h1 className="text-2xl md:text-4xl text-center mb-2 md:mb-6 font-bold text-green-500">
+        Your Wished Blog Is Here!
+      </h1>
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:mt-12 px-2 lg:px-6">
         {
         wishBlog?.map((blog) => (
           <ShowWishList blog={blog}></ShowWishList>
