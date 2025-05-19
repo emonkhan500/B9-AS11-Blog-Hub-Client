@@ -5,6 +5,7 @@ import { AuthContext } from '../provider/AuthProvider';
 
 const Featureds = () => {
     const {loading}=useContext(AuthContext)
+    const {user}=useContext(AuthContext)
 
     const{data:blogs}=useQuery({
         queryKey:['blogs'],
@@ -34,16 +35,17 @@ const columns = [
     sortable: true,
 },
 {
-    name: 'Owner Profile',
+    name: 'Blog Image',
     selector: row => row.profile,
 },
 ];
 
 const data = sortedBlogs?.map((blog, index) => ({
+    
 serial: index + 1,
 title: blog?.title,
 owner: blog?.name,
-profile: <img src={blog?.image} alt={blog.owner} style={{ width: '50px', borderRadius: '50%' }} />,
+profile: <img className='my-2' src={blog?.image} alt={blog.owner} style={{ width: '100px', borderRadius: '50%' }} />,
 }));
 
 if(loading){
@@ -51,6 +53,7 @@ if(loading){
 } 
 return (
 <DataTable 
+ className='px-52 text-lg'
     columns={columns}
     data={data}
 />
