@@ -58,20 +58,21 @@ const handleAddBlog = (e) => {
 
 
     return (
-        <div className="bg-gray-100 p-6 mt-11 md:p-12">
-            <h2 className="text-3xl font-extrabold text-center mb-8 text-cyan-300">Add a Blog</h2>
+        <div className=" p-6 mt-11 md:p-12">
+            <h2 className="text-3xl font-extrabold text-center mb-8 text-green-500">Add a Blog</h2>
+            <hr  className='w-72 mx-auto border-2 border-green-500'/>
             <form onSubmit={handleAddBlog}>
                 <div className="mb-8">
                     <label className="block mb-2">Image URL</label>
-                    <input type="text" name="image" placeholder="Image URL" className="input input-bordered w-full" />
+                    <input type="text" name="image" placeholder="Image URL" className="input input-bordered w-full bg-gray-100" />
                 </div>
                 <div className="mb-8">
                     <label className="block mb-2">Title</label>
-                    <input type="text" name="title" placeholder="Title" className="input input-bordered w-full" />
+                    <input type="text" name="title" placeholder="Title" className="input input-bordered w-full bg-gray-100" />
                 </div>
                 <div className="mb-8">
                     <label className="block mb-2">Category</label>
-                    <select name="category" className="input input-bordered w-full">
+                    <select name="category" className="input input-bordered w-full bg-gray-100">
                         
                         <option value="Fashion">Fashion</option>
                         <option value="Travel">Travel</option>
@@ -85,9 +86,9 @@ const handleAddBlog = (e) => {
                 </div>
                 <div className="mb-8">
                     <label className="block mb-2">Long Description</label>
-                    <input type="text" name="longdescription" placeholder="Long Description" className="input input-bordered w-full" />
+                    <input type="text" name="longdescription" placeholder="Long Description" className="input input-bordered w-full bg-gray-100" />
                 </div>
-                <button type="submit" className="btn btn-block text-white btn-success">Submit</button>
+                <button type="submit" className="rounded w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 text-lg">Submit</button>
             </form>
         </div>
     );
