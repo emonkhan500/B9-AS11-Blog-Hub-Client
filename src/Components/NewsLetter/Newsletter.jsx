@@ -20,7 +20,7 @@ const Newsletter = () => {
         setEmail(e.target.value);
       }
   return (
-    <div className=" text-center px-1 md:px-8 lg:px-28 mt-10 ">
+    <div className=" text-center px-1 md:px-8 lg:px-28 mt-16 ">
       <div className=" border-t-2 border-green-600 rounded-sm ">
         <img className="h-44 w-36 pt-10 mx-auto" src={img} alt="" />
         <h1 className="mt-5 text-3xl text-green-600 font-bold">Subscribe Newsletter</h1>

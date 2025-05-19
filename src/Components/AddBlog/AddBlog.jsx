@@ -82,7 +82,7 @@ const handleAddBlog = (e) => {
                 </div>
                 <div className="mb-8">
                     <label className="block mb-2">Short Description</label>
-                    <input type="text" name="description" placeholder="Short Description" className="input input-bordered w-full" />
+                    <input type="text" name="description" placeholder="Short Description" className="input input-bordered w-full bg-gray-100" />
                 </div>
                 <div className="mb-8">
                     <label className="block mb-2">Long Description</label>

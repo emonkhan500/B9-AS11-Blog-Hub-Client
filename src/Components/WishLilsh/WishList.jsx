@@ -12,7 +12,7 @@ const WishList = () => {
 
   const [wishBlog, setWishBlg] = useState([]);
 //   console.log(wishBlog);
-  const { user } = useContext(AuthContext);
+  const { user,loading } = useContext(AuthContext);
   useEffect(() => {
     fetch(`https://b9-assignment-11-server-one.vercel.app/wishlist/${user?.email}`)
       .then((res) => res.json())
@@ -21,7 +21,11 @@ const WishList = () => {
       });
     // console.log('jfdhhf')
   }, [user]);
+  if(loading){
+    return  <div className='text-center min-h-screen'><span className="loading loading-bars loading-lg"></span></div>
+} 
   return (
+
     <div className="mt-8 lg:mt-20">
       <h1 className="text-2xl md:text-4xl text-center mb-2 md:mb-6 font-bold text-green-500">
         Your Wished Blog Is Here!

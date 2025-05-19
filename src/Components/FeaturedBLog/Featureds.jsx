@@ -49,11 +49,11 @@ profile: <img className='my-2' src={blog?.image} alt={blog.owner} style={{ width
 }));
 
 if(loading){
-    return  <div className='text-center'><span className="loading loading-bars loading-lg"></span></div>
+    return  <div className='text-center min-h-screen'><span className="loading loading-bars loading-lg"></span></div>
 } 
 return (
 <DataTable 
- className='px-52 text-lg'
+ className='md:px-16 lg:px-52 text-lg dark:pt-10 dark:rounded-lg'
     columns={columns}
     data={data}
 />
